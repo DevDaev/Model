@@ -10,7 +10,7 @@ MODELS_DIR = "models"
 
 @st.cache_resource
 def load_artifacts():
-    model = load_model(os.path.join(MODELS_DIR, 'final_lstm_model.h5'))
+    model = load_model(os.path.join(MODELS_DIR, 'lstm_model.h5'))
     feature_scaler = joblib.load(os.path.join(MODELS_DIR, 'feature_scaler.pkl'))
     target_scaler = joblib.load(os.path.join(MODELS_DIR, 'target_scaler.pkl'))
     feature_columns = joblib.load(os.path.join(MODELS_DIR, 'feature_columns.pkl'))
