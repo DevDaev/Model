@@ -2,8 +2,9 @@ streamlit
 pandas
 scikit-learn
 tensorflow
-pmdarima
+#pmdarima
 joblib
 matplotlib
 numpy
-#xgboost 
+xgboost 
+
