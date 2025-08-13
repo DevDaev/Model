@@ -6,14 +6,15 @@ import os
 from tensorflow.keras.models import load_model
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
+
 MODELS_DIR = "models"
 
 @st.cache_resource
 def load_artifacts():
-    model = load_model(os.path.join(MODEL_DIR, 'lstm_model.h5'))
-    feature_scaler = joblib.load(os.path.join(MODEL_DIR, 'feature_scaler.pkl'))
-    target_scaler = joblib.load(os.path.join(MODEL_DIR, 'target_scaler.pkl'))
-    feature_columns = joblib.load(os.path.join(MODEL_DIR, 'feature_columns.pkl'))
+    model = load_model(os.path.join(MODELS_DIR, 'lstm_model.h5'))
+    feature_scaler = joblib.load(os.path.join(MODELS_DIR, 'feature_scaler.pkl'))
+    target_scaler = joblib.load(os.path.join(MODELS_DIR, 'target_scaler.pkl'))
+    feature_columns = joblib.load(os.path.join(MODELS_DIR, 'feature_columns.pkl'))
     return model, feature_scaler, target_scaler, feature_columns
 
 st.title("Cholera Outbreak Prediction")
