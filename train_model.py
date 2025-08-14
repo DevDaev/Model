@@ -34,7 +34,7 @@ def build_model(n_features, lstm_units=50, learning_rate=0.0005):
     return model
 
 def main(args):
-    print("Attempting to create directory....")
+    print(f"Attempting to create directory....")
     os.makedirs(args.output_dir, exist_ok=True)
     print(f"Directory '{args.output_dir}' created successfully.")
 
@@ -66,12 +66,12 @@ def main(args):
     model.fit(X_train_r, y_train_scaled, epochs=args.epochs, batch_size=args.batch_size,
               validation_split=0.2, callbacks=callbacks, verbose=1)
     
-    print("Saving models...")
+    print(f"Saving models...")
     model.save(os.path.join(args.output_dir, 'final_lstm_model.h5')
     joblib.dump(feature_scaler, os.path.join(args.output_dir, 'feature_scaler.pkl'))
     joblib.dump(target_scaler, os.path.join(args.output_dir, 'target_scaler.pkl'))
     joblib.dump(list(features.columns), os.path.join(args.output_dir, 'feature_columns.pkl'))
-    print("Models saved successfully.")
+    print(f"Models saved successfully.")
     
     preds_scaled = model.predict(X_test_r)
     preds = target_scaler.inverse_transform(preds_scaled).flatten()
@@ -91,6 +91,7 @@ if __name__ == "__main__":
     parser.add_argument('--lstm_units', type=int, default=50)
     parser.add_argument('--learning_rate', type=float, default=0.0005)
     args = parser.parse_args()
+
 
 
 
