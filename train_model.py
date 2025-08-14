@@ -67,7 +67,7 @@ def main(args):
               validation_split=0.2, callbacks=callbacks, verbose=1)
     
     print("Saving models...")
-    model.save(os.path.join(args.output_dir, 'final_lstm_model.h5')
+    model.save(os.path.join(args.output_dir, 'final_lstm_model.h5'))
     joblib.dump(feature_scaler, os.path.join(args.output_dir, 'feature_scaler.pkl'))
     joblib.dump(target_scaler, os.path.join(args.output_dir, 'target_scaler.pkl'))
     joblib.dump(list(features.columns), os.path.join(args.output_dir, 'feature_columns.pkl'))
@@ -91,6 +91,7 @@ if __name__ == "__main__":
     parser.add_argument('--lstm_units', type=int, default=50)
     parser.add_argument('--learning_rate', type=float, default=0.0005)
     args = parser.parse_args()
+
 
 
 
