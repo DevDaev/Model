@@ -87,6 +87,7 @@ if __name__ == "__main__":
     parser.add_argument('--lstm_units', type=int, default=50)
     parser.add_argument('--learning_rate', type=float, default=0.0005)
     args = parser.parse_args()
+
 =======
 import os
 import argparse
@@ -176,5 +177,3 @@ if __name__ == "__main__":
     parser.add_argument('--lstm_units', type=int, default=50)
     parser.add_argument('--learning_rate', type=float, default=0.0005)
     args = parser.parse_args()
->>>>>>> 3ec97a9 (Initial commit)
-    main(args)
