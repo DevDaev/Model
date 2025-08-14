@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 
-MODELS_DIR = "models"
+MODELS_DIR = "model"
 
 @st.cache_resource
 def load_artifacts():
